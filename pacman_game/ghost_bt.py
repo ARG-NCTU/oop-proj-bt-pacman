@@ -200,26 +200,19 @@ class BTGhostBase(Agent):
             return Selector([random_leaf])
 
         if mode == "directional":
-            return Selector([
-                Sequence([scared_cond, flee_leaf]),     # 先逃
-                Sequence([not_scared, chase_leaf]),     # 再追
-                random_leaf,                            # 兜底
-            ])
+            #####################################
+            # WRITE YOUR CODE HERE
+            #####################################
 
         if mode == "chasing":
-            return Selector([
-                Sequence([not_scared, chase_leaf]),     # 更激進：先追
-                Sequence([scared_cond, flee_leaf]),     # 再逃
-                random_leaf,
-            ])
+            #####################################
+            # WRITE YOUR CODE HERE
+            #####################################
 
         if mode == "imperfect":
-            return Selector([
-                Sequence([RandomChance(1.0 - self.prob_attack), random_leaf]),  # 有機率失誤
-                Sequence([scared_cond, flee_leaf]),
-                Sequence([not_scared, chase_leaf]),
-                random_leaf,
-            ])
+            #####################################
+            # WRITE YOUR CODE HERE
+            #####################################
 
         return Selector([random_leaf])
 
